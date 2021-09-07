@@ -1,0 +1,78 @@
+
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HL - Helper</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="d-flex flex-column h-100">
+
+  <script src="js/helper.js"></script>
+    
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="/">HL - Helper</a>
+    </nav>
+  </header>
+
+  <!-- Begin page content -->
+  <main class="flex-shrink-0">
+
+    <div class="container">
+            
+      <h1 class="mt-5">Delete Connection</h1>
+      <h6><span class="badge bg-light text-dark">AGENT</span><span id="agent_label" class="badge badge-info"></span>  <span class="badge bg-light text-dark">STATUS</span><span id="agent_status" class="badge badge-success"></span></h6>
+      <hr>
+
+      <script>getServerStatus()</script>
+
+
+      <div class="mb-3">
+        <p>Deleting all connections that are available on the device 💥</p>
+      </div>
+      <button onclick="delete_all_connection();" type="submit" class="btn btn-danger">Delete all connection</button>
+
+      <hr>
+
+      <form onsubmit="delete_connection(); return false">
+        <div class="mb-3">
+          <label for="connection_id" class="form-label">Connection ID</label>
+          <input type="text" class="form-control" id="connection_id" aria-describedby="connection_id" required="required" >
+          <div id="connection_id_label" class="form-text">Attention, once the connection has been removed, communication with the device via the Connection ID is no longer possible</div>
+        </div>
+        <button type="submit" class="btn btn-danger">Delete connection</button>
+      </form>
+      
+      <br>
+
+      <div id="del_con_box" class="alert alert-success" role="alert" style="visibility: hidden;">
+        <b>✔️ Connection was successfully deleted...</b> ID: <span id="del_con_id"></span>
+      </div>
+
+      <div id="del_con_box_err" class="alert alert-danger" role="alert" style="visibility: hidden;">
+        <b>⚡ Failed to delete connection...</b> ID: <span id="del_con_id_err"></span>
+      </div>
+
+    </div>
+
+  </main>
+
+    <!-- Begin footer content -->
+    <footer class="footer mt-auto py-3 bg-light">
+      <div class="container">                        
+        HL Helper
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+
+  hl-delcon:
+    container_name: hl-delcon
+    restart: always
+    build:
+      context: ./
+    env_file:
+      - .env
+    ports:
+      - 6001:6001
